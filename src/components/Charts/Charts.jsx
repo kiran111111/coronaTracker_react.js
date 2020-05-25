@@ -5,17 +5,12 @@ import styles from "./Charts.module.css"
 
 
 export default function Charts({data: { confirmed, recovered, deaths },country}) {
-
- console.log(country)
-
  const [dailyData,setDailyData] = useState([])
-
  useEffect(()=>{
    const fetchAPI = async () => {
     setDailyData(await fetchDailyData());
    }
    fetchAPI()
-   console.log(dailyData)
  },[])
 
  if(dailyData.length ===0){
